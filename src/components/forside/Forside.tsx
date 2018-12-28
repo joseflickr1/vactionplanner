@@ -4,9 +4,12 @@ import { RouteComponentProps } from 'react-router';
 import Element1 from './Element1';
 import Element from './Element';
 import {
-    StyledCalender,
-    StyledCircle, styleIn, styleOut
+    StyledCircle, StyledImg,
+    styleIn, styleOut
 } from './Styled';
+
+const Group1 = require('./Group1.svg');
+const Group2 = require('./Group2.svg');
 
 const StyledElementWrapper = styled.div`
     height: 100vh;
@@ -38,7 +41,7 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
             tittel: 'Desember 2019',
             tekst: 'Hold av datoen',
             tekstknapp: 'Ja, vis meg mer',
-            ikon: <StyledCalender/>,
+            ikon: <StyledImg src={Group2}/>,
             onClick:
                     (e: any) => { //tslint:disable-line
                         e.preventDefault();
@@ -52,8 +55,8 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
             tittel: 'Palawan',
             tekst: 'Du skal til varmt sted og \n' +
                 'nyte sol og strand',
-            tekstknapp: 'Ja, ta meg med',
-            ikon: <StyledCalender/>,
+            tekstknapp: 'Ja, jeg vil bli med',
+            ikon: <StyledImg src={Group1}/>,
             onClick:
                     () => {
                         this.setState({
@@ -80,6 +83,7 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
                 <Element1 {...props1} />
                 <Element {...props2} />
                 <Element {...props3} />
+
             </StyledElementWrapper>
         );
     }

@@ -6,7 +6,6 @@ const Element1 = ({tittel, tekst, tekstknapp, ikon, style, onClick}: any) => // 
         (
                 <StyledElement1
                     style={style}
-                    onClick={onClick}
                 >
                     <Typography
                         component="h1"
@@ -23,7 +22,9 @@ const Element1 = ({tittel, tekst, tekstknapp, ikon, style, onClick}: any) => // 
                     </Typography>
 
                     {ikon}
-                    <StyledButton>
+                    <StyledButton
+                        onClick={onClick}
+                    >
                         <Typography
                             variant="subtitle1"
                         >

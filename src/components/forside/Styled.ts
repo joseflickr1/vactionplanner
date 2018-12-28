@@ -41,11 +41,23 @@ export const StyledCalender = styled.div`
     border: 3px solid darkgray;
 `;
 
+export const StyledImg = styled.img`
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: auto;
+`;
+
 export const StyledButton = styled.button`
     margin: 1rem auto;
-    border: 1px solid darkgray;
-    border-radius: 5px;
+    border: 3px solid darkgray;
+    border-radius: 10px;
     padding: 0.4rem 1rem;
+    width: 88%;
+    @media (min-width: 400px) {
+        width: 50%;
+    }
+    
     
     p {
         margin-bottom: 0 !important;
@@ -103,13 +115,13 @@ export const StyledElement = styled.div`
 export const styleOut = {
     top: '-0.5em',
     animationName: fadeOutUp,
-    animationDuration: '1400ms',
+    animationDuration: '1300ms',
     opacity: '0'
 };
 export const styleIn = {
     top: '0',
     animationName: fadeInUp,
-    animationDuration: '600ms',
+    animationDuration: '500ms',
     background: 'white',
     opacity: '1'
 };
