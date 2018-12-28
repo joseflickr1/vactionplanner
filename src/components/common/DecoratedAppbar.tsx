@@ -12,7 +12,7 @@ const decorate = withStyles(() => ({
     }
 }));
 
-const DecoratedAppbar = decorate<any>(({classes, children}) => (
+const DecoratedAppbar = decorate<any>(({classes, children}: any) => ( // tslint:disable-line
     <AppBar position="static" classes={classes}>
         {children}
     </AppBar>

@@ -16,7 +16,7 @@ const decorate = withStyles(() => ({
     }
 }));
 
-const DecoratedButton = decorate<any>(({classes, children, props}) => (
+const DecoratedButton = decorate<any>(({classes, children, props}: any) => ( // tslint:disable-line
     <Button
         {...props}
         classes={classes}

@@ -9,12 +9,15 @@ const Element1 = ({tittel, tekst, tekstknapp, ikon, style, onClick}: any) => // 
                     onClick={onClick}
                 >
                     <Typography
-                        variant="display1"
+                        component="h1"
+                        variant="h2"
                     >
                         {tittel}
                     </Typography>
                     <Typography
-                        variant="body1"
+                        component="h2"
+                        variant="h5"
+                        gutterBottom={true}
                     >
                         {tekst}
                     </Typography>
@@ -22,7 +25,7 @@ const Element1 = ({tittel, tekst, tekstknapp, ikon, style, onClick}: any) => // 
                     {ikon}
                     <StyledButton>
                         <Typography
-                            variant="body1"
+                            variant="subtitle1"
                         >
                             {tekstknapp}
                         </Typography>

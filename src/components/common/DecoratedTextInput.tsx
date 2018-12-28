@@ -36,7 +36,8 @@ const decorate = withStyles(() => ({
     }
 }));
 
-const DecoratedTextInput = decorate<any>(({id, label, value, onChange, inputProps, startAdornment, classes}) => (
+const DecoratedTextInput = decorate<any>((
+    {id, label, value, onChange, inputProps, startAdornment, classes}: any) => ( // tslint:disable
     <FormControl fullWidth={true}>
         <Input
             disableUnderline={true}

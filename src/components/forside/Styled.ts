@@ -27,7 +27,7 @@ export const fadeOutUp = keyframes`
 export const StyledCircle = styled.div`
     width: 60px;
     height: 60px;
-    margin: auto;
+    margin: 2rem auto;
     border-radius: 50%;
     content: "";
     border: 5px solid darkgray;
@@ -36,17 +36,9 @@ export const StyledCircle = styled.div`
 export const StyledCalender = styled.div`
     width: 70px;
     height: 70px;
-    margin: auto;
+    margin: 2rem auto;
     content: "";
     border: 3px solid darkgray;
-`;
-
-export const StyledLine = styled.div`
-    height: 250px;
-    margin: auto;
-    width: 2px;
-    content: "";
-    border-left: 3px solid darkgray;
 `;
 
 export const StyledButton = styled.button`
@@ -68,7 +60,7 @@ export const StyledElement1 = styled.div`
     position: absolute;
     width: 100%;
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 6rem;
     opacity: 0;
     
     > h1, p {
@@ -76,6 +68,10 @@ export const StyledElement1 = styled.div`
     }
     > h1, p {
         color: ${primaryContrastText}
+    }
+    
+    > h2 {
+        margin: auto 2rem;
     }
     
 `;
@@ -87,16 +83,19 @@ export const StyledElement = styled.div`
     position: absolute;
     width: 100%;
     opacity: 0;
-    padding-top: 2rem;
+    padding-top: 6rem;
     top: 39em;
     text-align: center;
-    padding: 2rem 0;
     
     > h1, p {
         margin-bottom: 20px;
     }
     > h1, p {
         color: ${primaryContrastText}
+    }
+    
+    > h2 {
+        margin: auto 2rem;
     }
     
 `;
@@ -110,7 +109,7 @@ export const styleOut = {
 export const styleIn = {
     top: '0',
     animationName: fadeInUp,
-    animationDuration: '800ms',
+    animationDuration: '600ms',
     background: 'white',
     opacity: '1'
 };

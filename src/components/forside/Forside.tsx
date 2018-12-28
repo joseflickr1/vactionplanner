@@ -24,7 +24,7 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
     render() {
 
         let props1 = {
-            tittel: 'Hei :)',
+            tittel: 'Hei',
             tekst: 'Tenker du å planlegge ferie 2019?',
             tekstknapp: 'Ja',
             ikon: <StyledCircle/>,

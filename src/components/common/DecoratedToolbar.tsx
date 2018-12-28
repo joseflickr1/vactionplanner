@@ -11,7 +11,7 @@ const decorate = withStyles(() => ({
     }
 }));
 
-const DecoratedToolbar = decorate<any>(({classes, children}) => (
+const DecoratedToolbar = decorate<any>(({classes, children}: any) => ( // tslint:disable-line
     <Toolbar classes={classes}>
         {children}
     </Toolbar>
