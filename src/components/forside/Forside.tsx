@@ -24,7 +24,9 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
     render() {
 
         let props1 = {
-            tekst: 'You are invited',
+            tittel: 'Hei :)',
+            tekst: 'Tenker du å planlegge ferie 2019?',
+            tekstknapp: 'Ja',
             ikon: <StyledCircle/>,
             onClick: () => {
                 this.setState({
@@ -33,7 +35,9 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
             },
         };
         let props2 = {
-            tekst: 'Desember 2019',
+            tittel: 'Desember 2019',
+            tekst: 'Hold av datoen',
+            tekstknapp: 'Ja, vis meg mer',
             ikon: <StyledCalender/>,
             onClick:
                     (e: any) => { //tslint:disable-line
@@ -45,7 +49,10 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
             ,
         };
         let props3 = {
-            tekst: 'Palawan',
+            tittel: 'Palawan',
+            tekst: 'Du skal til varmt sted og \n' +
+                'nyte sol og strand',
+            tekstknapp: 'Ja, ta meg med',
             ikon: <StyledCalender/>,
             onClick:
                     () => {
@@ -57,7 +64,9 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
         };
 
         const styleKey = 'style';
-        if (this.state.elementToShow === 2) {
+        if (this.state.elementToShow === 1) {
+            props1[styleKey] = styleIn;
+        } else if (this.state.elementToShow === 2) {
             props1[styleKey] = styleOut;
             props2[styleKey] = styleIn;
 

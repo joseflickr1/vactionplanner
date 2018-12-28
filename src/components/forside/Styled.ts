@@ -25,12 +25,12 @@ export const fadeOutUp = keyframes`
 `;
 
 export const StyledCircle = styled.div`
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     margin: auto;
     border-radius: 50%;
     content: "";
-    border: 3px solid darkgray;
+    border: 5px solid darkgray;
 `;
 
 export const StyledCalender = styled.div`
@@ -49,6 +49,17 @@ export const StyledLine = styled.div`
     border-left: 3px solid darkgray;
 `;
 
+export const StyledButton = styled.button`
+    margin: 1rem auto;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    padding: 0.4rem 1rem;
+    
+    p {
+        margin-bottom: 0 !important;
+    }
+`;
+
 export const StyledElement1 = styled.div`
     
     -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -58,6 +69,7 @@ export const StyledElement1 = styled.div`
     width: 100%;
     text-align: center;
     padding-top: 2rem;
+    opacity: 0;
     
     > h1, p {
         margin-bottom: 20px;
@@ -65,9 +77,6 @@ export const StyledElement1 = styled.div`
     > h1, p {
         color: ${primaryContrastText}
     }
-    
-    animation-name: ${fadeInUp};
-    animation-duration: 400ms;
     
 `;
 
@@ -77,7 +86,7 @@ export const StyledElement = styled.div`
     vertical-align: middle;
     position: absolute;
     width: 100%;
-    display: none;
+    opacity: 0;
     padding-top: 2rem;
     top: 39em;
     text-align: center;
@@ -96,11 +105,12 @@ export const styleOut = {
     top: '-0.5em',
     animationName: fadeOutUp,
     animationDuration: '1400ms',
+    opacity: '0'
 };
 export const styleIn = {
     top: '0',
     animationName: fadeInUp,
-    animationDuration: '400ms',
+    animationDuration: '800ms',
     background: 'white',
-    display: 'block'
+    opacity: '1'
 };
