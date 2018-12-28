@@ -10,7 +10,6 @@ import {
 
 const StyledElementWrapper = styled.div`
     height: 100vh;
-    
 `;
 
 export default class Forside extends React.Component<RouteComponentProps<{}>, any> { //tslint:disable-line
@@ -37,7 +36,8 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
             tekst: 'Desember 2019',
             ikon: <StyledCalender/>,
             onClick:
-                    () => {
+                    (e: any) => { //tslint:disable-line
+                        e.preventDefault();
                         this.setState({
                             elementToShow: 3
                         });

@@ -49,10 +49,36 @@ export const StyledLine = styled.div`
     border-left: 3px solid darkgray;
 `;
 
-export const StyledElement = styled.div`
+export const StyledElement1 = styled.div`
+    
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
     vertical-align: middle;
     position: absolute;
     width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    
+    > h1, p {
+        margin-bottom: 20px;
+    }
+    > h1, p {
+        color: ${primaryContrastText}
+    }
+    
+    animation-name: ${fadeInUp};
+    animation-duration: 400ms;
+    
+`;
+
+export const StyledElement = styled.div`
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    vertical-align: middle;
+    position: absolute;
+    width: 100%;
+    display: none;
+    padding-top: 2rem;
     top: 39em;
     text-align: center;
     padding: 2rem 0;
@@ -75,5 +101,6 @@ export const styleIn = {
     top: '0',
     animationName: fadeInUp,
     animationDuration: '400ms',
-    background: 'white'
+    background: 'white',
+    display: 'block'
 };

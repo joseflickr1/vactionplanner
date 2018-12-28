@@ -7,6 +7,7 @@ const Element = ({tekst, ikon, style, onClick}: any) => // tslint:disable-line
         (
                 <StyledElement
                     style={style}
+                    onClick={onClick}
                 >
                     <Typography
                         variant="display1"
@@ -17,10 +18,6 @@ const Element = ({tekst, ikon, style, onClick}: any) => // tslint:disable-line
                     {ikon}
 
                     <StyledLine/>
-                    <div
-                        onClick={onClick}
-                    >Hei
-                    </div>
                 </StyledElement>
         );
 
