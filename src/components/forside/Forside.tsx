@@ -4,7 +4,7 @@ import { RouteComponentProps } from 'react-router';
 import Element1 from './Element1';
 import Element from './Element';
 import {
-    StyledCircle, StyledImg,
+    StyledImg,
     styleIn, styleOut
 } from './Styled';
 
@@ -12,31 +12,39 @@ const Group1 = require('./Group1.svg');
 const Group2 = require('./Group2.svg');
 
 const StyledElementWrapper = styled.div`
-    height: 100vh;
+    height: 80vh;
 `;
 
 export default class Forside extends React.Component<RouteComponentProps<{}>, any> { //tslint:disable-line
+    props1 = {
+        tittel: 'Hei',
+        tekst: 'Planlegge ferie 2019?',
+        tekstknapp: 'Neste',
+        ikon: <StyledImg src={Group1}/>,
+        onClick: () => {
+            this.setState({
+                              elementToShow: 2
+                          });
+        },
+    };
 
     constructor(props: any) { //tslint:disable-line
         super(props);
         this.state = {
             elementToShow: 1,
+
         };
+    }
+
+    componentWillMount() {
+        const styleKey = 'style';
+        if (this.state.elementToShow === 1) {
+            this.props1[styleKey] = styleIn;
+        }
     }
 
     render() {
 
-        let props1 = {
-            tittel: 'Hei',
-            tekst: 'Tenker du å planlegge ferie 2019?',
-            tekstknapp: 'Ja',
-            ikon: <StyledCircle/>,
-            onClick: () => {
-                this.setState({
-                    elementToShow: 2
-                });
-            },
-        };
         let props2 = {
             tittel: 'Desember 2019',
             tekst: 'Hold av datoen',
@@ -67,10 +75,8 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
         };
 
         const styleKey = 'style';
-        if (this.state.elementToShow === 1) {
-            props1[styleKey] = styleIn;
-        } else if (this.state.elementToShow === 2) {
-            props1[styleKey] = styleOut;
+        if (this.state.elementToShow === 2) {
+            this.props1[styleKey] = styleOut;
             props2[styleKey] = styleIn;
 
         } else if (this.state.elementToShow === 3) {
@@ -78,9 +84,10 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
             props3[styleKey] = styleIn;
         }
 
+        const pro1 = this.props1;
         return (
             <StyledElementWrapper>
-                <Element1 {...props1} />
+                <Element1 {...pro1} />
                 <Element {...props2} />
                 <Element {...props3} />
 

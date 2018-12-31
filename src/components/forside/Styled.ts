@@ -5,11 +5,13 @@ export const fadeInUp = keyframes`
         0% {
             opacity: 0;
             transform: translate3d(0, 200px, 0);
+            background: green;
         }
         
         100% {
             opacity: 1;
-            transform: translate3d(0, 0, 0);
+            transform: translate3d(0, -50%, 0);
+            top: 50%;
         }
 `;
 export const fadeOutUp = keyframes`
@@ -30,26 +32,22 @@ export const StyledCircle = styled.div`
     margin: 2rem auto;
     border-radius: 50%;
     content: "";
-    border: 5px solid darkgray;
-`;
-
-export const StyledCalender = styled.div`
-    width: 70px;
-    height: 70px;
-    margin: 2rem auto;
-    content: "";
-    border: 3px solid darkgray;
+    border: 5px solid #293782;
 `;
 
 export const StyledImg = styled.img`
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+    @media (min-width: 400px) {
+        width: 49%;
+    }
+    
     display: block;
-    margin: auto;
+    margin: 1rem auto;
 `;
 
 export const StyledButton = styled.button`
-    margin: 1rem auto;
+    margin: auto;
     border: 3px solid darkgray;
     border-radius: 10px;
     padding: 0.4rem 1rem;
@@ -68,17 +66,18 @@ export const StyledElement1 = styled.div`
     
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 
-    vertical-align: middle;
-    position: absolute;
     width: 100%;
+    top: 40%;
+    transform: translateY(-30%);
     text-align: center;
-    padding-top: 6rem;
+    position: relative;
+    
     opacity: 0;
     
     > h1, p {
         margin-bottom: 20px;
     }
-    > h1, p {
+    > h1, h2, p {
         color: ${primaryContrastText}
     }
     
@@ -110,18 +109,22 @@ export const StyledElement = styled.div`
         margin: auto 2rem;
     }
     
+    
+    display: none;
+    
 `;
 
 export const styleOut = {
     top: '-0.5em',
     animationName: fadeOutUp,
     animationDuration: '1300ms',
-    opacity: '0'
+    opacity: '0',
 };
 export const styleIn = {
-    top: '0',
+    /*top: '50%',
+    transform: 'translateY(-50%)',
     animationName: fadeInUp,
-    animationDuration: '500ms',
+    animationDuration: '500ms',*/
     background: 'white',
     opacity: '1'
 };
