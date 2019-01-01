@@ -4,7 +4,6 @@ import { RouteComponentProps } from 'react-router';
 import Element1 from './Element1';
 import Element from './Element';
 import {
-    StyledImg,
     styleIn, styleOut
 } from './Styled';
 
@@ -20,7 +19,7 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
         tittel: 'Hei',
         tekst: 'Planlegge ferie 2019?',
         tekstknapp: 'Neste',
-        ikon: <StyledImg src={Group1}/>,
+        img: Group1,
         onClick: () => {
             this.setState({
                               elementToShow: 2
@@ -49,7 +48,7 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
             tittel: 'Desember 2019',
             tekst: 'Hold av datoen',
             tekstknapp: 'Ja, vis meg mer',
-            ikon: <StyledImg src={Group2}/>,
+            img: Group2,
             onClick:
                     (e: any) => { //tslint:disable-line
                         e.preventDefault();
@@ -64,7 +63,7 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
             tekst: 'Du skal til varmt sted og \n' +
                 'nyte sol og strand',
             tekstknapp: 'Ja, jeg vil bli med',
-            ikon: <StyledImg src={Group1}/>,
+            img: Group1,
             onClick:
                     () => {
                         this.setState({

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Typography from '@material-ui/core/Typography';
-import { StyledButton, StyledElement } from './Styled';
+import { StyledButton, StyledElement, StyledImg } from './Styled';
 
 
-const Element = ({tittel, tekst, tekstknapp, ikon, style, onClick}: any) => // tslint:disable-line
+const Element = ({tittel, tekst, tekstknapp, img, style, onClick}: any) => // tslint:disable-line
         (
                 <StyledElement
                     style={style}
@@ -22,7 +22,7 @@ const Element = ({tittel, tekst, tekstknapp, ikon, style, onClick}: any) => // t
                         {tekst}
                     </Typography>
 
-                    {ikon}
+                    <StyledImg src={img}/>
                     <StyledButton
                         onClick={onClick}
                     >
