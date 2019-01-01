@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { primaryContrastText } from '../../assets/jss/material-fotohjelp-react';
 
-const fadeInUp = keyframes`
+export const fadeInUp = keyframes`
         0% {
             opacity: 0;            
             display: none;
@@ -117,39 +117,19 @@ export const StyledElement = styled.div`
 `;
 
 export const styleOut = {
-    body: {
-        top: '-0.5em',
-        animationName: fadeOutUp,
-        animationDuration: '1300ms',
-        opacity: '0',
-        display: 'none',
-    },
-    h1: {
-        animationDuration: '200ms',
-    }
+    top: '-0.5em',
+    animationName: fadeOutUp,
+    animationDuration: '1300ms',
+    opacity: '0',
+    display: 'none',
 };
 
 export const styleIn = {
-    body: {
-        top: '40%',
-        transform: 'translateY(-30%)',
-        animationName: fadeInUp,
-        animationDuration: '400ms',
-        background: 'white',
-        opacity: '1',
-        display: 'block',
-    },
-    h2: {
-        top: '40%',
-        transform: 'translateY(-30%)',
-        animationName: fadeInUp,
-        animationDuration: '600ms',
-    },
-    img: {
-        top: '20%',
-        transform: 'translateY(-5%)',
-        animationName: fadeInUp,
-        animationDuration: '800ms',
-    }
-
+    top: '40%',
+    transform: 'translateY(-30%)',
+    animationName: fadeInUp,
+    animationDuration: '400ms',
+    background: 'white',
+    opacity: '1',
+    display: 'block',
 };
