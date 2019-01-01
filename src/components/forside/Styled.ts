@@ -1,27 +1,30 @@
 import styled, { keyframes } from 'styled-components';
 import { primaryContrastText } from '../../assets/jss/material-fotohjelp-react';
 
-export const fadeInUp = keyframes`
+const fadeInUp = keyframes`
         0% {
-            opacity: 0;
-            transform: translate3d(0, 200px, 0);
-            background: green;
+            opacity: 0;            
+            display: none;
+            transform: translate3d(0, 400px, 0);
         }
         
         100% {
             opacity: 1;
-            transform: translate3d(0, -50%, 0);
-            top: 50%;
+            display: block;
+            transform: translate3d(0, -30%, 0);
+            top: 40%;
         }
 `;
 export const fadeOutUp = keyframes`
         0% {
             opacity: 1;
+            display: block;
             transform: translate3d(0, 0, 0);
         }
         
         100% {
             opacity: 0;
+            display: none;
             transform: translate3d(0, -200px, 0);
         }
 `;
@@ -72,8 +75,6 @@ export const StyledElement1 = styled.div`
     text-align: center;
     position: relative;
     
-    opacity: 0;
-    
     > h1, p {
         margin-bottom: 20px;
     }
@@ -90,18 +91,19 @@ export const StyledElement1 = styled.div`
 export const StyledElement = styled.div`
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 
-    vertical-align: middle;
-    position: absolute;
-    width: 100%;
-    opacity: 0;
-    padding-top: 6rem;
-    top: 39em;
+     width: 100%;
+
+    top: 40%;
+    transform: translateY(-30%);
+    text-align: center;
+    position: relative;
+    
     text-align: center;
     
     > h1, p {
         margin-bottom: 20px;
     }
-    > h1, p {
+    > h1, h2, p {
         color: ${primaryContrastText}
     }
     
@@ -115,16 +117,39 @@ export const StyledElement = styled.div`
 `;
 
 export const styleOut = {
-    top: '-0.5em',
-    animationName: fadeOutUp,
-    animationDuration: '1300ms',
-    opacity: '0',
+    body: {
+        top: '-0.5em',
+        animationName: fadeOutUp,
+        animationDuration: '1300ms',
+        opacity: '0',
+        display: 'none',
+    },
+    h1: {
+        animationDuration: '200ms',
+    }
 };
+
 export const styleIn = {
-    /*top: '50%',
-    transform: 'translateY(-50%)',
-    animationName: fadeInUp,
-    animationDuration: '500ms',*/
-    background: 'white',
-    opacity: '1'
+    body: {
+        top: '40%',
+        transform: 'translateY(-30%)',
+        animationName: fadeInUp,
+        animationDuration: '400ms',
+        background: 'white',
+        opacity: '1',
+        display: 'block',
+    },
+    h2: {
+        top: '40%',
+        transform: 'translateY(-30%)',
+        animationName: fadeInUp,
+        animationDuration: '600ms',
+    },
+    img: {
+        top: '20%',
+        transform: 'translateY(-5%)',
+        animationName: fadeInUp,
+        animationDuration: '800ms',
+    }
+
 };
