@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
-import Typography from '@material-ui/core/Typography';
 
 const StyledElementWrapper = styled.div`
     height: 150vh;
@@ -69,25 +68,27 @@ const StyledElementProgress = styled.div`
     border-bottom: 1px solid #CFD0D4;
 `;
 
-const StyledTypographyH2Progress = styled(Typography)`
-    font-size: 16.4px !important;
-    line-height: 1.1 !important;
-    color: #696A6F !important;    
+const StyledTypographyH2Progress = styled.h2`
+    font-size: 16.4px;;
+    font-weight: 500;
+    line-height: 1.1;;
+    color: #696A6F;;
+    margin:0;    
 `;
 
-const StyledTypographySubtittelProgress = styled(Typography)`
-    font-size: 14.4px !important;
-    font-weight: 400 !important;
-    line-height: 1.17 !important;
-    color: #5C5D61 !important;
-    margin-top: 3px !important;
+const StyledTypographySubtittelProgress = styled.p`
+    font-size: 14.4px;
+    font-weight: 400;
+    line-height: 1.17;
+    color: #5C5D61;
+    margin: 3px 0 0 0;
 `;
-const StyledTypographySubtittelTotal = styled(Typography)`
-    font-size: 13.3px !important;
-    font-weight: 400 !important;
-    line-height: 1.17 !important;
-    color: #526CA7 !important;
-    margin-top: 8px !important;
+const StyledTypographySubtittelTotal = styled.p`
+    font-size: 13.3px;
+    font-weight: 400;
+    line-height: 1.17;
+    color: #526CA7;
+    margin: 8px 0 0 0;
 `;
 const StyledProgressBar = styled.div`
     width: 352px;
@@ -132,16 +133,11 @@ export default class Spareside extends React.Component<RouteComponentProps<{}>, 
                 </StyledTypographyWrapper>
 
                 <StyledElementProgress>
-                    <StyledTypographyH2Progress
-                        component="h2"
-                        variant="h6"
-                    >
+                    <StyledTypographyH2Progress>
                         51 uker igjen
                     </StyledTypographyH2Progress>
 
-                    <StyledTypographySubtittelProgress
-                        variant="subtitle1"
-                    >
+                    <StyledTypographySubtittelProgress>
                         Spar sammen til ferie og reis med venner og familie!
                     </StyledTypographySubtittelProgress>
 
