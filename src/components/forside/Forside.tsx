@@ -9,6 +9,7 @@ import {
 
 const Group1 = require('./Group1.svg');
 const Group2 = require('./Group2.svg');
+const Group3 = require('./Group3.svg');
 
 const StyledElementWrapper = styled.div`
     height: 80vh;
@@ -63,12 +64,10 @@ export default class Forside extends React.Component<RouteComponentProps<{}>, an
             tekst: 'Du skal til varmt sted og \n' +
                 'nyte sol og strand',
             tekstknapp: 'Ja, jeg vil bli med',
-            img: Group1,
+            img: Group3,
             onClick:
                     () => {
-                        this.setState({
-                            elementToShow: 1
-                        });
+                        this.props.history.push('/spare');
                     }
             ,
         };
