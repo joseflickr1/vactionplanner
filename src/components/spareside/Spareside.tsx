@@ -4,6 +4,7 @@ import { RouteComponentProps } from 'react-router';
 import Typography from '@material-ui/core/Typography';
 
 const StyledElementWrapper = styled.div`
+    height: 150vh;
     width: 375px;
     margin: auto;
     
@@ -13,14 +14,14 @@ const StyledElementWrapper = styled.div`
 `;
 
 const StyledElementTop = styled.div`
-    height: 223px;
+    height: 209px;
     margin-top: 2rem;
     background: #F3F9F9;
 `;
 
 const StyledTypographyWrapper = styled.div`
     width: 352px;
-    margin-top: 2rem;
+    margin-top: 3.5rem;
     margin-left: auto;
     margin-right: auto;
     padding-left: 11.5px;
@@ -29,22 +30,21 @@ const StyledTypographyWrapper = styled.div`
 `;
 const StyledTekstWrapper = styled.div`
     padding-left: 40px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
 `;
 const StyledTypographyH1 = styled(Typography)`
     font-weight: 400 !important;
     font-size: 22.4px !important;
-    line-height: 1.1 !important;
+    line-height: 27px !important;
     color: #474749 !important;
     width: 248px;
 `;
 
 const StyledTypographySubtittel = styled(Typography)`
-    font-size: 12.6px !important;
+    font-size: 12.7px !important;
     font-weight: 400 !important;
-    line-height: 1.17 !important;
+    line-height: 15px !important;
     color: #74797F !important;
-    margin-top: 3px !important;
 `;
 
 const StyledButton = styled.button`
@@ -52,14 +52,14 @@ const StyledButton = styled.button`
     width: 100%;
     font-size: 14.9px;
     background: #407FFE;
-    padding: 0.6rem 0;
+    padding: 0.63rem 0;
     color: white;
     border-radius: 3px;
 `;
 
 const StyledElementProgress = styled.div`
     height: 85px;
-    margin-top: 4rem;
+    margin-top: 5rem;
     background: #F3F9F9;
     text-align: center;
     padding-top: 1rem;
