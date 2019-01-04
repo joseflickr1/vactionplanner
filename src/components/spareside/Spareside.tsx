@@ -8,7 +8,7 @@ const StyledElementWrapper = styled.div`
     width: 375px;
     margin: auto;
     
-    h1, h6, button {
+    h1, h2, p, button {
         font-family: "Helvetica Neue", "Arial", sans-serif !important;
     }
 `;
@@ -32,19 +32,21 @@ const StyledTekstWrapper = styled.div`
     padding-left: 40px;
     margin-bottom: 1.1rem;
 `;
-const StyledTypographyH1 = styled(Typography)`
-    font-weight: 400 !important;
-    font-size: 22.4px !important;
-    line-height: 27px !important;
-    color: #474749 !important;
+const StyledTypographyH1 = styled.h1`
+    font-weight: 400;
+    font-size: 22.4px;
+    line-height: 27px;
+    color: #474749;
     width: 248px;
+    margin:0;
 `;
 
-const StyledTypographySubtittel = styled(Typography)`
-    font-size: 12.7px !important;
-    font-weight: 400 !important;
-    line-height: 15px !important;
-    color: #74797F !important;
+const StyledTypographySubtittel = styled.p`
+    font-size: 12.7px;
+    font-weight: 400;
+    line-height: 15px;
+    color: #74797F;
+    margin: 0;
 `;
 
 const StyledButton = styled.button`
@@ -113,17 +115,12 @@ export default class Spareside extends React.Component<RouteComponentProps<{}>, 
                 <StyledTypographyWrapper>
 
                     <StyledTekstWrapper>
-                        <StyledTypographyH1
-                            component="h1"
-                            variant="h6"
-                        >
+                        <StyledTypographyH1>
                             Din oversikt til sparing til ferie
                             i desember 2019
                         </StyledTypographyH1>
 
-                        <StyledTypographySubtittel
-                            variant="subtitle1"
-                        >
+                        <StyledTypographySubtittel>
                             Du kan spare til ferie, holde oversikt og planlegge reise
                             sammen venner og familie
                         </StyledTypographySubtittel>
