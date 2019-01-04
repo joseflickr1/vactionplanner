@@ -2,9 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 import Typography from '@material-ui/core/Typography';
+
 const StyledElementWrapper = styled.div`
-    height: 80vh;
-    width: 100%;
+    width: 375px;
     margin: auto;
     
     h1, h6, button {
@@ -13,11 +13,8 @@ const StyledElementWrapper = styled.div`
 `;
 
 const StyledElementTop = styled.div`
-    width: 100%;
     height: 223px;
     margin-top: 2rem;
-    margin-right: auto;
-    margin-left: auto;
     background: #F3F9F9;
 `;
 
@@ -32,13 +29,14 @@ const StyledTypographyWrapper = styled.div`
 `;
 const StyledTekstWrapper = styled.div`
     padding-left: 40px;
+    margin-bottom: 1rem;
 `;
 const StyledTypographyH1 = styled(Typography)`
     font-weight: 400 !important;
     font-size: 22.4px !important;
     line-height: 1.1 !important;
     color: #474749 !important;
-    width: 234px;
+    width: 248px;
 `;
 
 const StyledTypographySubtittel = styled(Typography)`
@@ -54,48 +52,45 @@ const StyledButton = styled.button`
     width: 100%;
     font-size: 14.9px;
     background: #407FFE;
-    margin-top: 1rem;
     padding: 0.6rem 0;
     color: white;
     border-radius: 3px;
 `;
 
 const StyledElementProgress = styled.div`
-    width: 375px;
-    height: 75px;
+    height: 85px;
     margin-top: 4rem;
-    margin-right: auto;
-    margin-left: auto;
     background: #F3F9F9;
     text-align: center;
     padding-top: 1rem;
-    border: 1px solid #CFD0D4;
+    border-top: 1px solid #CFD0D4;
+    border-bottom: 1px solid #CFD0D4;
 `;
 
 const StyledTypographyH2Progress = styled(Typography)`
-    font-size: 15px !important;
+    font-size: 16.4px !important;
     line-height: 1.1 !important;
     color: #696A6F !important;    
 `;
 
 const StyledTypographySubtittelProgress = styled(Typography)`
-    font-size: 12.7px !important;
+    font-size: 14.4px !important;
     font-weight: 400 !important;
     line-height: 1.17 !important;
     color: #5C5D61 !important;
     margin-top: 3px !important;
 `;
 const StyledTypographySubtittelTotal = styled(Typography)`
-    font-size: 11.8px !important;
+    font-size: 13.3px !important;
     font-weight: 400 !important;
     line-height: 1.17 !important;
     color: #526CA7 !important;
     margin-top: 8px !important;
 `;
 const StyledProgressBar = styled.div`
-    width: 300px;
+    width: 352px;
     height: 8px;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
     margin-left: auto;
     margin-right: auto;
     background: #CFD0D4;
