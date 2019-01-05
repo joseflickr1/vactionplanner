@@ -1,6 +1,7 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { RouteComponentProps } from 'react-router';
+const star = require('./kva.svg');
 
 const StyledElementWrapper = styled.div`
     height: 150vh;
@@ -100,6 +101,24 @@ const StyledProgressBar = styled.div`
     border-radius: 8px;
 `;
 
+export const spin = keyframes`
+    0% {
+        transform: rotate(0deg) scale(1); 
+    }
+    50% { 
+        transform: rotate(320deg) scale(0.1); 
+    }
+    100% { 
+        transform: rotate(640deg) scale(.8); 
+    }
+`;
+
+const StyledImg = styled.img`
+    width: 10%;
+    height: 10%;
+    animation: ${spin} 1200ms;
+`;
+
 export default class Spareside extends React.Component<RouteComponentProps<{}>, any> { //tslint:disable-line
 
     constructor(props: any) { //tslint:disable-line
@@ -116,6 +135,18 @@ export default class Spareside extends React.Component<RouteComponentProps<{}>, 
                 <StyledTypographyWrapper>
 
                     <StyledTekstWrapper>
+
+                        <StyledImg
+                            height="50%"
+                            width="50%"
+                            style={
+                                {
+                                    transformOrigin: 'center',
+                                    transform: 'rotate(160deg)'
+                                }
+                            }
+                            src={star}
+                        />
                         <StyledTypographyH1>
                             Din oversikt til sparing til ferie
                             i desember 2019
