@@ -106,10 +106,10 @@ export const spin = keyframes`
         transform: rotate(0deg) scale(1); 
     }
     50% { 
-        transform: rotate(320deg) scale(0.1); 
+        transform: rotate(360deg) scale(0.1);
     }
     100% { 
-        transform: rotate(640deg) scale(.8); 
+        transform: rotate(720deg) scale(1); 
     }
 `;
 
@@ -139,12 +139,6 @@ export default class Spareside extends React.Component<RouteComponentProps<{}>, 
                         <StyledImg
                             height="50%"
                             width="50%"
-                            style={
-                                {
-                                    transformOrigin: 'center',
-                                    transform: 'rotate(160deg)'
-                                }
-                            }
                             src={star}
                         />
                         <StyledTypographyH1>
