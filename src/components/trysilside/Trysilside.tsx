@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { RouteComponentProps } from 'react-router';
-import { auth } from '../../config/constants';
+import { auth, firestoredb } from '../../config/constants';
 const star = require('./star.svg');
 const card1 = require('./card1.svg');
 const card2 = require('./card2.svg');
@@ -175,13 +175,38 @@ export default class Trysilside extends React.Component<RouteComponentProps<{}>,
 
     constructor(props: any) { //tslint:disable-line
         super(props);
+    }
 
+    componentWillMount(): void {
         auth().signInAnonymously().catch(function(error: any) { //tslint:disable-line
             // Handle Errors here.
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log('errorCode, errorMessage', errorCode, errorMessage); //tslint:disable-line
         });
+    }
+
+    componentDidMount(): void {
+        auth().onAuthStateChanged(function(user) { // tslint:disable-line
+            if (user) {
+                // User is signed in.
+                firestoredb.collection('users').add({
+                    first: 'Ada 1',
+                    last: 'Lovelace',
+                    born: 1815
+                })
+                    .then(function(docRef) { // tslint:disable-line
+                        console.log('Document written with ID: ', docRef.id); // tslint:disable-line
+                    })
+                    .catch(function(error) { // tslint:disable-line
+                        console.error('Error adding document: ', error); // tslint:disable-line
+                    });
+                // ...
+            } else {
+                // User is signed out.
+            }
+        });
+
     }
 
     render() {
