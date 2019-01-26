@@ -3,6 +3,8 @@ import styled, { keyframes } from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 const star = require('./star.svg');
 const card1 = require('./card1.svg');
+const card2 = require('./card2.svg');
+const card3 = require('./card3.svg');
 
 const StyledElementWrapper = styled.div`
     height: 150vh;
@@ -31,48 +33,102 @@ const StyledTekstWrapper = styled.div`
     margin-bottom: 1.1rem;
 `;
 
+const StyledTypographyH1Small = styled.h1`
+    font-weight: 500;
+    font-size: 18.6px;
+    color: #626262;
+    margin: 0.5rem 0 -0.8rem 0;
+    display: flex;
+    align-items: flex-end;
+`;
+
 const StyledTypographyH1 = styled.h1`
     font-weight: 500;
     font-size: 44px;
-    color: #626262;
+    color: #333232;
     margin: 0.5rem 0;
 `;
 
 const StyledTypographyH2 = styled.h2`
     font-weight: 500;
     font-size: 32px;
-    color: #626262;
+    color: #333232;
     margin: 0.5rem 0;
 `;
 
 const StyledTypographyH3 = styled.h3`
     font-size: 21.6px;
     font-weight: 400;
-    color: #626262;
+    color: #333232;
     margin: 0.5rem 0;
 `;
 
 const StyledTypographySubtittel = styled.p`
     font-weight: 400;
     font-size: 15.6px;
-    color: #626262;
-    margin: 1rem 0;
+    color: #333232;
+    margin: 1.5rem 0;
 `;
 
 const StyledElementCard1 = styled.div`
-    margin: 2rem 0;
-    background: #467DFC;
+    margin: 2rem 0.5rem;
+    background: #0867FF;
     color: #FFF;
     padding: 0.5rem 2rem;
     border-radius: 10px;
     
     background-image: url(${card1});
     background-repeat: no-repeat;
-    background-position-x: 92%;
+    background-position-x: -10rem;
 
 `;
 
-const StyledTypographyH1Card1 = styled.h1`
+const StyledElementCard2 = styled.div`
+    margin: 2rem 0.5rem;
+    background: #D22BFA;
+    color: #FFF;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    
+    background-image: url(${card2});
+    background-repeat: no-repeat;
+    background-position-y: 2rem;
+    background-position-x: 1rem;
+    
+    p {
+        margin-bottom: 7rem;
+    }
+    
+    p:last-child {
+        margin-bottom: inherit;
+    }
+
+`;
+
+const StyledElementCard3 = styled.div`
+    margin: 2rem 0.5rem;
+    background: #ff8914;
+    color: #FFF;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    
+    background-image: url(${card3});
+    background-repeat: no-repeat;
+    background-position-y: 2rem;
+    background-position-x: 1rem;
+    background-size: 8rem;
+    
+    p {
+        margin-bottom: 7rem;
+    }
+    
+    p:last-child {
+        margin-bottom: inherit;
+    }
+
+`;
+
+const StyledTypographyH1Card = styled.h1`
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 2rem;    
@@ -105,10 +161,10 @@ export const spin = keyframes`
 `;
 
 const StyledImg = styled.img`
-    width: 10%;
-    height: 10%;
     animation: ${spin} 1200ms;
-    top: 5px;
+    width: 6%;
+    height: 6%;
+    top: -3px;
     position: relative;
     margin-right: 0.5rem;
 
@@ -131,33 +187,37 @@ export default class Trysilside extends React.Component<RouteComponentProps<{}>,
                     <hr/>
 
                     <StyledTekstWrapper>
-                        <StyledTypographyH1>
+                        <StyledTypographyH1Small>
                             <StyledImg
                                 height="50%"
                                 width="50%"
                                 src={star}
                             />
+                            Program
+                        </StyledTypographyH1Small>
+                        <StyledTypographyH1>
                             Trysil
                         </StyledTypographyH1>
                         <StyledTypographyH2>
                             1 - 3. februar
                         </StyledTypographyH2>
                         <StyledTypographyH3>
-                            Velkommen. Opplev en helg med aktiviteter på fjellet!
+                            Velkommen! Opplev en helg med aktiviteter på fjellet!
                         </StyledTypographyH3>
 
                         <hr/>
                         <StyledTypographySubtittel>
-                            Her kan du slappe med SPA, svømming eller frisk luft i fra fjellet!
+                            Her kan du slappe av med SPA, innendørs svømmebasseng
+                            eller en tur i frisk fjellluft!
                         </StyledTypographySubtittel>
                     </StyledTekstWrapper>
 
                 </StyledTypographyWrapper>
 
                 <StyledElementCard1>
-                    <StyledTypographyH1Card1>
+                    <StyledTypographyH1Card>
                         Fredag
-                    </StyledTypographyH1Card1>
+                    </StyledTypographyH1Card>
                     <StyledTypographyPCard1>
                         15:30
                         <span>Avreise Bil Oslo</span>
@@ -172,6 +232,47 @@ export default class Trysilside extends React.Component<RouteComponentProps<{}>,
                     </StyledTypographyPCard1>
 
                 </StyledElementCard1>
+
+                <StyledElementCard2>
+                    <StyledTypographyH1Card>
+                        Lørdag
+                    </StyledTypographyH1Card>
+                    <StyledTypographyPCard1>
+                        08:30
+                        <span>Frokost</span>
+                    </StyledTypographyPCard1>
+                    <StyledTypographyPCard1>
+                        12:30
+                        <span>Lunsj</span>
+                    </StyledTypographyPCard1>
+                    <StyledTypographyPCard1>
+                        19:00
+                        <span>SPA / Fritid / Aktiviteter</span>
+                    </StyledTypographyPCard1>
+                    <StyledTypographyPCard1>
+                        20:30
+                        <span>Samling</span>
+                    </StyledTypographyPCard1>
+
+                </StyledElementCard2>
+                <StyledElementCard3>
+                    <StyledTypographyH1Card>
+                        Søndag
+                    </StyledTypographyH1Card>
+                    <StyledTypographyPCard1>
+                        08:30
+                        <span>Frokost</span>
+                    </StyledTypographyPCard1>
+                    <StyledTypographyPCard1>
+                        12:30
+                        <span>SPA / Lunsj</span>
+                    </StyledTypographyPCard1>
+                    <StyledTypographyPCard1>
+                        15:00
+                        <span>Avreise</span>
+                    </StyledTypographyPCard1>
+
+                </StyledElementCard3>
 
             </StyledElementWrapper>
         );
