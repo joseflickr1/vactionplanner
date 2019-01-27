@@ -1,7 +1,8 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { RouteComponentProps } from 'react-router';
-import { auth, firestoredb } from '../../config/constants';
+import { firestoredb } from '../../config/constants';
+import { avatars } from './konstater';
 const star = require('./star.svg');
 const card1 = require('./card1.svg');
 const card2 = require('./card2.svg');
@@ -21,6 +22,19 @@ const StyledElementWrapper = styled.div`
     
 `;
 
+const Avatars = styled.div`
+    display: inline-block;
+    text-align: center;
+    margin: 0 0.3rem;
+    > img {
+        width: 3rem;        
+    }
+    > span {
+        display: block;
+        margin: 0.5rem auto;
+    }
+`;
+
 const StyledTypographyWrapper = styled.div`
     width: 352px;
     margin-top: 3.5rem;
@@ -28,6 +42,8 @@ const StyledTypographyWrapper = styled.div`
     margin-right: auto;
     padding-left: 11.5px;
     padding-right: 11.5px;
+    
+    
     
 `;
 const StyledTekstWrapper = styled.div`
@@ -175,44 +191,76 @@ export default class Trysilside extends React.Component<RouteComponentProps<{}>,
 
     constructor(props: any) { //tslint:disable-line
         super(props);
-    }
-
-    componentWillMount(): void {
-        auth().signInAnonymously().catch(function(error: any) { //tslint:disable-line
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log('errorCode, errorMessage', errorCode, errorMessage); //tslint:disable-line
-        });
+        window.scrollTo(0, 0);
+        this.state = {
+            names: [{navn: '', avID: ''}],
+            loading: true,
+        };
     }
 
     componentDidMount(): void {
-        auth().onAuthStateChanged(function(user) { // tslint:disable-line
-            if (user) {
-                // User is signed in.
-                firestoredb.collection('users').add({
-                    first: 'Ada 1',
-                    last: 'Lovelace',
-                    born: 1815
-                })
-                    .then(function(docRef) { // tslint:disable-line
-                        console.log('Document written with ID: ', docRef.id); // tslint:disable-line
-                    })
-                    .catch(function(error) { // tslint:disable-line
-                        console.error('Error adding document: ', error); // tslint:disable-line
-                    });
-                // ...
-            } else {
-                // User is signed out.
+        const names = [{}];
+        firestoredb.collection('users').get()
+            .then((querySnapshot) => {
+                
+            if (querySnapshot.size === 0) {
+                this.setState({
+                    loading: false,
+                });
             }
-        });
+            
+            querySnapshot.forEach((doc) => {
+                names.push({
+                    navn: doc.data().first,
+                    avID: doc.data().avID,
+                });
 
+                this.setState({
+                    loading: false,
+                    names,
+                });
+            });
+        });
     }
 
     render() {
+        let elemem = null;
+        if (this.state.loading) {
+            return <div>loading</div>;
+        } else {
+            console.log('this.state', this.state.names); // tslint:disable-line
+
+            elemem = this.state.names.map((el: { navn: string, avID: string }, key: any) => { // tslint:disable-line
+                console.log('el.navn', el.navn); // tslint:disable-line
+                console.log('el.navn', el.avID); // tslint:disable-line
+
+                if (el.avID === undefined) {
+                    return null;
+                }
+
+                return (
+                    <Avatars key={key}>
+                        <img
+                            src={avatars[el.avID]}
+                        />
+                        <span>
+                            {el.navn}
+                        </span>
+                    </Avatars>
+                );
+            });
+
+            console.log('elemem', elemem); // tslint:disable-line
+
+        }
+        
         return (
             <StyledElementWrapper>
                 <StyledTypographyWrapper>
+
+                    {
+                        elemem
+                    }
 
                     <hr/>
 
