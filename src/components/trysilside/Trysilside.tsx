@@ -8,6 +8,52 @@ const card1 = require('./card1.svg');
 const card2 = require('./card2.svg');
 const card3 = require('./card3.svg');
 
+export const sideFadeIn = keyframes`
+    0% {
+        opacity: 0;
+    }
+    50% { 
+        opacity: 0.8;
+    }
+    100% { 
+         opacity: 1;
+    }
+`;
+
+const loadingColor = keyframes`
+    0% {
+        background-color: #FFF;
+        opacity: 0;
+        transform: translate3d(0, 0, 0);
+    }
+    50% { 
+        background-color: #FFFA76;
+        opacity: 0.7;
+    }
+    
+    80% { 
+        background-color: #D642FA;
+        opacity: 0.8;
+        transform: translate3d(0, 80%, 0);
+    }
+    100% { 
+        background-color: #FFF;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+ 
+    }
+`;
+
+export const Loading = styled.div`
+    animation: ${loadingColor} 1200ms infinite;
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    margin 5rem auto;
+    
+    border-radius: 100%;
+`;
+
 const StyledElementWrapper = styled.div`
     width: 375px;
     margin: auto;
@@ -253,7 +299,7 @@ export default class Trysilside extends React.Component<RouteComponentProps<{}>,
     render() {
         let elemem = null;
         if (this.state.loading) {
-            return <div>loading</div>;
+            return <Loading/>;
         } else {
             console.log('this.state', this.state.names); // tslint:disable-line
 

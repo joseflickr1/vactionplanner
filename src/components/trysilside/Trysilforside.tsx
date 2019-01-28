@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 import { auth, firestoredb } from '../../config/constants';
 import { avatars } from './konstater';
+import { Loading, sideFadeIn } from './Trysilside';
 const Tittelforside = require('./Tittelforside.svg');
 
 const StyledElementWrapper = styled.div`
@@ -32,6 +33,8 @@ const StyledContentWrapper = styled.div`
     width: 100%;
     margin: 0;
     text-align: center;
+    
+    animation: ${sideFadeIn} 1200ms;
     
     > div {
         > img {
@@ -133,7 +136,7 @@ export default class Trysilforside extends React.Component<RouteComponentProps<{
         if (this.state.loading) {
             return (
                 <StyledElementWrapper>
-                    loading
+                    <Loading/>
                 </StyledElementWrapper>
             );
         }
