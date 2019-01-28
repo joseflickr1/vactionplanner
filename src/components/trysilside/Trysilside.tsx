@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { RouteComponentProps } from 'react-router';
-import { firestoredb } from '../../config/constants';
+import { auth, firestoredb } from '../../config/constants';
 import { avatars } from './konstater';
 const star = require('./star.svg');
 const card1 = require('./card1.svg');
@@ -214,6 +214,19 @@ export default class Trysilside extends React.Component<RouteComponentProps<{}>,
 
     componentDidMount(): void {
         const names = [{}];
+
+        auth().onAuthStateChanged((user) => { // tslint:disable-line
+            if (user) {
+                // User is signed in.
+            } else {
+                // User is signed out.
+                this.setState({
+                    loading: false
+                });
+            }
+
+        });
+
         firestoredb.collection('users').get()
             .then((querySnapshot) => {
                 
