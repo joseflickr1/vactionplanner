@@ -9,7 +9,6 @@ const card2 = require('./card2.svg');
 const card3 = require('./card3.svg');
 
 const StyledElementWrapper = styled.div`
-    height: 150vh;
     width: 375px;
     margin: auto;
     
@@ -25,13 +24,28 @@ const StyledElementWrapper = styled.div`
 const Avatars = styled.div`
     display: inline-block;
     text-align: center;
-    margin: 0 0.3rem;
+    margin: 0 0.5rem;
     > img {
         width: 3rem;        
     }
+    > span:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30%;
+        height: 100%;
+        background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, white 80%, white 100%);
+        pointer-events: none;
+      }
     > span {
+        position: relative;
         display: block;
         margin: 0.5rem auto;
+        overflow-x: hidden;
+        width: 3rem;
+        white-space: nowrap;
+        font-size: .8rem;
     }
 `;
 
