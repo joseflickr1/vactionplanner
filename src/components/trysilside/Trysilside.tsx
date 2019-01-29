@@ -12,9 +12,6 @@ export const sideFadeIn = keyframes`
     0% {
         opacity: 0;
     }
-    50% { 
-        opacity: 0.8;
-    }
     100% { 
          opacity: 1;
     }
@@ -28,13 +25,11 @@ const loadingColor = keyframes`
     }
     50% { 
         background-color: #FFFA76;
-        opacity: 0.7;
     }
     
     80% { 
         background-color: #D642FA;
-        opacity: 0.8;
-        transform: translate3d(0, 80%, 0);
+        transform: translate3d(0, 50%, 0);
     }
     100% { 
         background-color: #FFF;
@@ -45,7 +40,7 @@ const loadingColor = keyframes`
 `;
 
 export const Loading = styled.div`
-    animation: ${loadingColor} 1200ms infinite;
+    animation: ${loadingColor} 2200ms infinite;
     width: 5rem;
     height: 5rem;
     display: block;
@@ -57,7 +52,9 @@ export const Loading = styled.div`
 const StyledElementWrapper = styled.div`
     width: 375px;
     margin: auto;
-    
+
+    animation: ${sideFadeIn} 1400ms;
+
     font-family: "Helvetica Neue", "Arial", sans-serif !important;
     
     hr {

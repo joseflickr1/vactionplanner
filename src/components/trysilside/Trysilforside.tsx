@@ -34,7 +34,7 @@ const StyledContentWrapper = styled.div`
     margin: 0;
     text-align: center;
     
-    animation: ${sideFadeIn} 1200ms;
+    animation: ${sideFadeIn} 1400ms;
     
     > div {
         > img {
@@ -53,8 +53,8 @@ const StyledContentWrapper = styled.div`
     }
     
     > img {
-        width: 10rem;
-        margin-top: 2rem;
+        width: 15rem;
+        margin-top: 4rem;
     }
     
     h1 {
