@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Forside  from './components/forside/Forside';
 import Spareside  from './components/spareside/Spareside';
-import Trysilside from './components/trysilside/Trysilside';
+import Kompetanseside from './components/kompetanseside/Kompetanseside';
+import Kompetanseforside from './components/kompetanseside/Kompetanseforside';
 
 class App extends React.Component {
     render() {
@@ -11,9 +11,9 @@ class App extends React.Component {
             <BrowserRouter>
                 <div>
                     <Switch>
-                        <Route path="/forside" exact={true} component={Forside}/>
+                        <Route path="/forside" exact={true} component={Kompetanseforside}/>
                         <Route path="/spare" exact={true} component={Spareside}/>
-                        <Route path="/" exact={true} component={Trysilside}/>
+                        <Route path="/kompetanse" exact={true} component={Kompetanseside}/>
                         <Route render={() => <h3>No Match</h3>}/>
                     </Switch>
                 </div>

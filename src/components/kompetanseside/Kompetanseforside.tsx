@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 import { auth, firestoredb } from '../../config/constants';
 import { avatars } from './konstater';
-import { Loading, sideFadeIn } from './Trysilside';
-const Tittelforside = require('./Tittelforside.svg');
+import { Loading, sideFadeIn } from './Kompetanseside';
 
 const StyledElementWrapper = styled.div`
 
@@ -15,10 +14,11 @@ const StyledElementWrapper = styled.div`
     width: 375px;
     margin: auto;
     
+    padding-top: 8rem;
+    
     background: linear-gradient(#6FA6FF, #0867FF 34%);
         
     display:flex;
-    
     
     font-family: "Helvetica Neue", "Arial", sans-serif !important;
     
@@ -99,7 +99,7 @@ const StyledContentWrapper = styled.div`
     }    
 `;
 
-export default class Trysilforside extends React.Component<RouteComponentProps<{}>, any> { //tslint:disable-line
+export default class Kompetanseforside extends React.Component<RouteComponentProps<{}>, any> { //tslint:disable-line
 
     constructor(props: any) { //tslint:disable-line
         super(props);
@@ -119,7 +119,7 @@ export default class Trysilforside extends React.Component<RouteComponentProps<{
         auth().onAuthStateChanged((user) => { // tslint:disable-line
             if (user) {
                 // User is signed in.
-                this.props.history.push('/trysilside');
+                this.props.history.push('/kompetanse');
 
             } else {
                 // User is signed out.
@@ -156,9 +156,8 @@ export default class Trysilforside extends React.Component<RouteComponentProps<{
             <StyledElementWrapper>
                 <StyledContentWrapper>
 
-                    <img src={Tittelforside}/>
                     <h1>
-                        Velkommen! <br/> Skriv inn ditt navn og se programmet
+                        Velkommen! <br/> Skriv inn ditt navn og se kompetanse
                     </h1>
 
                     <div>

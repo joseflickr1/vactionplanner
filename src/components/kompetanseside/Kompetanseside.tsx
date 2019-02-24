@@ -4,9 +4,6 @@ import { RouteComponentProps } from 'react-router';
 import { auth, firestoredb } from '../../config/constants';
 import { avatars } from './konstater';
 const star = require('./star.svg');
-const card1 = require('./card1.svg');
-const card2 = require('./card2.svg');
-const card3 = require('./card3.svg');
 
 export const sideFadeIn = keyframes`
     0% {
@@ -146,72 +143,31 @@ const StyledTypographySubtittel = styled.p`
 
 const StyledElementCard1 = styled.div`
     margin: 2rem 0.5rem;
-    background: #0867FF;
+    background: #08b5ff;
     color: #FFF;
     padding: 0.5rem 2rem;
     border-radius: 10px;
-    
-    background-image: url(${card1});
-    background-repeat: no-repeat;
-    background-position-x: -10rem;
-
 `;
 
 const StyledElementCard2 = styled.div`
     margin: 2rem 0.5rem;
-    background: #D22BFA;
+    background: grey;
     color: #FFF;
     padding: 0.5rem 2rem;
     border-radius: 10px;
-    
-    background-image: url(${card2});
-    background-repeat: no-repeat;
-    background-position-y: 2rem;
-    background-position-x: 1rem;
-    
-    p {
-        margin-bottom: 7rem;
-    }
-    
-    p:last-child {
-        margin-bottom: inherit;
-    }
-
-`;
-
-const StyledElementCard3 = styled.div`
-    margin: 2rem 0.5rem;
-    background: #ff8914;
-    color: #FFF;
-    padding: 0.5rem 2rem;
-    border-radius: 10px;
-    
-    background-image: url(${card3});
-    background-repeat: no-repeat;
-    background-position-y: 2rem;
-    background-position-x: 1rem;
-    background-size: 8rem;
-    
-    p {
-        margin-bottom: 7rem;
-    }
-    
-    p:last-child {
-        margin-bottom: inherit;
-    }
-
 `;
 
 const StyledTypographyH1Card = styled.h1`
     font-size: 32px;
     font-weight: 500;
-    margin-bottom: 2rem;    
+    margin-bottom: 0.5rem;    
 `;
 
 const StyledTypographyPCard1 = styled.p`
-    font-size: 32px;
+    font-size: 18px;
     font-weight: 500;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     
@@ -244,7 +200,7 @@ const StyledImg = styled.img`
 
 `;
 
-export default class Trysilside extends React.Component<RouteComponentProps<{}>, any> { //tslint:disable-line
+export default class Kompetanseside extends React.Component<RouteComponentProps<{}>, any> { //tslint:disable-line
 
     constructor(props: any) { //tslint:disable-line
         super(props);
@@ -272,13 +228,13 @@ export default class Trysilside extends React.Component<RouteComponentProps<{}>,
 
         firestoredb.collection('users').get()
             .then((querySnapshot) => {
-                
+
             if (querySnapshot.size === 0) {
                 this.setState({
                     loading: false,
                 });
             }
-            
+
             querySnapshot.forEach((doc) => {
                 names.push({
                     navn: doc.data().first,
@@ -298,11 +254,8 @@ export default class Trysilside extends React.Component<RouteComponentProps<{}>,
         if (this.state.loading) {
             return <Loading/>;
         } else {
-            console.log('this.state', this.state.names); // tslint:disable-line
 
             elemem = this.state.names.map((el: { navn: string, avID: string }, key: any) => { // tslint:disable-line
-                console.log('el.navn', el.navn); // tslint:disable-line
-                console.log('el.navn', el.avID); // tslint:disable-line
 
                 if (el.avID === undefined) {
                     return null;
@@ -320,10 +273,8 @@ export default class Trysilside extends React.Component<RouteComponentProps<{}>,
                 );
             });
 
-            console.log('elemem', elemem); // tslint:disable-line
-
         }
-        
+
         return (
             <StyledElementWrapper>
                 <StyledTypographyWrapper>
@@ -341,22 +292,21 @@ export default class Trysilside extends React.Component<RouteComponentProps<{}>,
                                 width="50%"
                                 src={star}
                             />
-                            Program
+                            Oversikt
                         </StyledTypographyH1Small>
                         <StyledTypographyH1>
-                            Trysil
+                            Kompetanse
                         </StyledTypographyH1>
                         <StyledTypographyH2>
-                            1 - 3. februar
+                            2019
                         </StyledTypographyH2>
                         <StyledTypographyH3>
-                            Velkommen! Opplev en helg med aktiviteter på fjellet!
+                            Oversikt over faglig aktiviteter
                         </StyledTypographyH3>
 
                         <hr/>
                         <StyledTypographySubtittel>
-                            Her kan du slappe av med SPA, innendørs svømmebasseng
-                            eller en tur i frisk fjellluft!
+                            Mål og progresjon
                         </StyledTypographySubtittel>
                     </StyledTekstWrapper>
 
@@ -364,63 +314,58 @@ export default class Trysilside extends React.Component<RouteComponentProps<{}>,
 
                 <StyledElementCard1>
                     <StyledTypographyH1Card>
-                        Fredag
+                        Frontend sert
                     </StyledTypographyH1Card>
                     <StyledTypographyPCard1>
-                        15:30
-                        <span>Avreise Bil Oslo</span>
+                        Mars
                     </StyledTypographyPCard1>
+
+                </StyledElementCard1>
+
+                <StyledElementCard1>
+
+                    <StyledTypographyH1Card>
+                        AWS sert
+                    </StyledTypographyH1Card>
+
                     <StyledTypographyPCard1>
-                        18:30
-                        <span>Ankomst Trysil hytte</span>
+                        Juli
                     </StyledTypographyPCard1>
+
+                </StyledElementCard1>
+
+                <StyledElementCard1>
+
+                    <StyledTypographyH1Card>
+                        Kurs i Presentasjonsteknikk
+                    </StyledTypographyH1Card>
                     <StyledTypographyPCard1>
-                        19:30
-                        <span>SPA / Fritid / Aktiviteter</span>
+                        Mai
                     </StyledTypographyPCard1>
 
                 </StyledElementCard1>
 
                 <StyledElementCard2>
+
                     <StyledTypographyH1Card>
-                        Lørdag
+                        iMBA
                     </StyledTypographyH1Card>
                     <StyledTypographyPCard1>
-                        08:30
-                        <span>Frokost</span>
-                    </StyledTypographyPCard1>
-                    <StyledTypographyPCard1>
-                        12:30
-                        <span>Lunsj</span>
-                    </StyledTypographyPCard1>
-                    <StyledTypographyPCard1>
-                        19:00
-                        <span>SPA / Fritid / Aktiviteter</span>
-                    </StyledTypographyPCard1>
-                    <StyledTypographyPCard1>
-                        20:30
-                        <span>Samling</span>
+                        2019
                     </StyledTypographyPCard1>
 
                 </StyledElementCard2>
-                <StyledElementCard3>
+
+                <StyledElementCard2>
+
                     <StyledTypographyH1Card>
-                        Søndag
+                        Produktutvikling
                     </StyledTypographyH1Card>
                     <StyledTypographyPCard1>
-                        08:30
-                        <span>Frokost</span>
-                    </StyledTypographyPCard1>
-                    <StyledTypographyPCard1>
-                        12:30
-                        <span>SPA / Lunsj</span>
-                    </StyledTypographyPCard1>
-                    <StyledTypographyPCard1>
-                        15:00
-                        <span>Avreise</span>
+                        2019
                     </StyledTypographyPCard1>
 
-                </StyledElementCard3>
+                </StyledElementCard2>
 
             </StyledElementWrapper>
         );
