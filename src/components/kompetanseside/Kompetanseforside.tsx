@@ -207,7 +207,7 @@ export default class Kompetanseforside extends React.Component<RouteComponentPro
                                     })
                                         .then((docRef) => { // tslint:disable-line
                                             console.log('Document written with ID: ', docRef.id); // tslint:disable-line
-                                            this.props.history.push('/trysilside');
+                                            this.props.history.push('/kompetanse');
                                         })
                                         .catch(function(error) { // tslint:disable-line
                                             console.error('Error adding document: ', error); // tslint:disable-line
