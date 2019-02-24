@@ -11,7 +11,7 @@ class App extends React.Component {
             <BrowserRouter>
                 <div>
                     <Switch>
-                        <Route path="/forside" exact={true} component={Kompetanseforside}/>
+                        <Route path="/" exact={true} component={Kompetanseforside}/>
                         <Route path="/spare" exact={true} component={Spareside}/>
                         <Route path="/kompetanse" exact={true} component={Kompetanseside}/>
                         <Route render={() => <h3>No Match</h3>}/>
